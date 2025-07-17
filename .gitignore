@@ -1,2 +1,11 @@
 data/
 venv/
+csvfiles/
+articles/
+JPEGImages/
+__pycache__/
+menv/
+vitenv/
+huenv/
+vit/output/
+vit/vitenv
