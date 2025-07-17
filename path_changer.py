@@ -2,11 +2,11 @@ import os
 import pandas as pd
 
 # Define old and new path prefixes
-old_prefix = 'C:/Users/Asus/Desktop/TCT_data/data/JPEGImages/'
-new_prefix = 'C:/Users/Administrator/Desktop/TCT_data/data/JPEGImages/'
+old_prefix = 'C:/Users/Administrator/Desktop/TCT_data/data/JPEGImages/'
+new_prefix = 'C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/data/JPEGImages/'
 
 # Root directory containing the csv files
-root_dir = 'C:/Users/Administrator/Desktop/TCT_data/csvfiles'
+root_dir = 'C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles'
 
 # Walk through all folders and process csv files
 for subdir, _, files in os.walk(root_dir):

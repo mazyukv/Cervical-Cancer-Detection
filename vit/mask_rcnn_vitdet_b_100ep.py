@@ -55,10 +55,10 @@ def load_tct_dataset(csv_path):
     return dataset_dicts
 
 # Register both train and val datasets
-DatasetCatalog.register("tct_train", lambda: load_tct_dataset("C:/Users/Administrator/Desktop/TCT_data/csvfiles/fold1/train.csv"))
+DatasetCatalog.register("tct_train", lambda: load_tct_dataset("C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/fold1/train.csv"))
 MetadataCatalog.get("tct_train").set(thing_classes=["cancer"])
 
-DatasetCatalog.register("tct_val", lambda: load_tct_dataset("C:/Users/Administrator/Desktop/TCT_data/csvfiles/fold1/val.csv"))
+DatasetCatalog.register("tct_val", lambda: load_tct_dataset("C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/test.csv"))
 MetadataCatalog.get("tct_val").set(thing_classes=["cancer"])
 
 

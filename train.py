@@ -3,6 +3,8 @@
 """
 train model
 """
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 import torch
 from torch.utils.data import DataLoader
@@ -16,9 +18,9 @@ import time
 from network.backbone_utils import resnet_fpn_backbone, densenet_fpn_backbone, swin_fpn_backbone, convnext_fpn_backbone
 from network import ssdresbackbone, SSD, FCOS, RetinaNet, FasterRCNN, CascadeRCNN
 # from vit import ViTDetector
-from netsparse import SparseRCNN
+# from netsparse import SparseRCNN
 # from vit import YOLOv3, YOLOv7
-from netdetr import DETR
+# from netdetr import DETR
 from tool import transforms as T
 import _utils
 from trainer import main_process
@@ -58,7 +60,7 @@ args = parser.parse_args()
 
 
 def main(args):
-    device = torch.device("cuda:1") if torch.cuda.is_available() else torch.device("cpu")
+    device = torch.device("cuda")
     print(args)
     CLASSES = {"__background__", "abnormal"}
     
@@ -98,8 +100,8 @@ def main(args):
     # model = RetinaNet(backbone, num_classes=len(CLASSES))
 
     # Faster RCNN
-    # backbone = resnet_fpn_backbone(args.model_name, args.pretrained)
-    # model = FasterRCNN(backbone, num_classes=len(CLASSES))
+    backbone = resnet_fpn_backbone(args.model_name, args.pretrained)
+    model = FasterRCNN(backbone, num_classes=len(CLASSES))
 
     # Cascade RCNN
     # backbone = resnet_fpn_backbone(args.model_name, args.pretrained)
@@ -116,7 +118,7 @@ def main(args):
     # model = YOLOv7(num_classes=len(CLASSES))
 
     # DETR
-    model = DETR(num_classes=len(CLASSES))
+    # model = DETR(num_classes=len(CLASSES))
 
     # VIT
     # model = ViTDetector()

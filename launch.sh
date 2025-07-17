@@ -1,13 +1,13 @@
 #!/bin/bash
-TEST_CSV_PATH="C:/Users/Asus/Desktop/TCT_data/csvfiles/test.csv"
-MODEL_NAME='vit_small_patch16_224'
+TEST_CSV_PATH="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/test.csv"
+MODEL_NAME='resnet50'
 NUM_EPOCHS=40
 
 echo "========Fold1========"
-LOG="C:/Users/Asus/Desktop/TCT_data/detvit/fold1/logs"
-SAVE_MODEL_PATH="C:/Users/Asus/Desktop/TCT_data/detvit/fold1/f1.pth"
-TRAIN_CSV_PATH="C:/Users/Asus/Desktop/TCT_data/csvfiles/fold1/train.csv"
-VAL_CSV_PATH="C:/Users/Asus/Desktop/TCT_data/csvfiles/fold1/val.csv"
+LOG="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/cnn/fold1/logs"
+SAVE_MODEL_PATH="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/cnn/fold1/f1.pth"
+TRAIN_CSV_PATH="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/fold1/train.csv"
+VAL_CSV_PATH="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/fold1/val.csv"
 FOLD=1
 python train.py \
     --model_name $MODEL_NAME \
