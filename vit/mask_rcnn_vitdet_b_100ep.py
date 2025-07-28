@@ -58,7 +58,7 @@ def load_tct_dataset(csv_path):
 DatasetCatalog.register("tct_train", lambda: load_tct_dataset("C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/fold1/train.csv"))
 MetadataCatalog.get("tct_train").set(thing_classes=["cancer"])
 
-DatasetCatalog.register("tct_val", lambda: load_tct_dataset("C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/test.csv"))
+DatasetCatalog.register("tct_val", lambda: load_tct_dataset("C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/fold1/val.csv"))
 MetadataCatalog.get("tct_val").set(thing_classes=["cancer"])
 
 
@@ -75,15 +75,15 @@ train.init_checkpoint = (
 
 # Schedule
 # 100 ep = 184375 iters * 64 images/iter / 118000 images/ep
-train.max_iter = 184375
+train.max_iter = 111560
 
 lr_multiplier = L(WarmupParamScheduler)(
     scheduler=L(MultiStepParamScheduler)(
         values=[1.0, 0.1, 0.01],
-        milestones=[163889, 177546],
+        milestones=[100404, 105982],
         num_updates=train.max_iter,
     ),
-    warmup_length=250 / train.max_iter,
+    warmup_length=250 / train.max_iter,  # or use 0.00224 directly
     warmup_factor=0.001,
 )
 
