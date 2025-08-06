@@ -97,7 +97,7 @@ def validate(epoch, model, loader, device, save_model_path, fold):
                             "prediction": locs})
     valpath = os.path.join(os.path.dirname(save_model_path),'val_loc.csv')
     loc_res.to_csv(valpath, index=False)
-    valap_dict,val_mAP,valmf1 = custom_voc_eval(gt_csv=f'C:/Users/Asus/Desktop/TCT_data/csvfiles/fold{fold}/val.csv', pred_csv=valpath) 
+    valap_dict,val_mAP,valmf1 = custom_voc_eval(gt_csv=f'C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/fold{fold}/val.csv', pred_csv=valpath) 
     print(f"Epoch: {epoch}, | val TCT AP :{valap_dict['1']:.4f}")
     print(f"Epoch: {epoch}, | val mAP: {val_mAP:.4f}")    
 
@@ -147,7 +147,7 @@ def summary(model, loader, device, save_model_path):
                             "prediction": locs})
     testpath = os.path.join(os.path.dirname(save_model_path),'test_loc.csv')
     loc_res.to_csv(testpath, index=False)
-    testap_dict,test_mAP,testmf1 = custom_voc_eval(gt_csv="C:/Users/Asus/Desktop/TCT_data/csvfiles/test.csv", pred_csv=testpath) 
+    testap_dict,test_mAP,testmf1 = custom_voc_eval(gt_csv="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/test.csv", pred_csv=testpath) 
     print(f"Test TCT AP :{testap_dict['1']:.4f}")
     print(f"Test mAP: {test_mAP:.4f}")
     print(f"Test F1-score: {testmf1:.4f}")

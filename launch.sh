@@ -4,8 +4,8 @@ MODEL_NAME='resnet50'
 NUM_EPOCHS=40
 
 echo "========Fold1========"
-LOG="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/cnn/fold1/logs"
-SAVE_MODEL_PATH="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/cnn/fold1/f1.pth"
+LOG="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/cnn2/fold1/logs"
+SAVE_MODEL_PATH="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/cnn2/fold1/f1.pth"
 TRAIN_CSV_PATH="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/fold1/train.csv"
 VAL_CSV_PATH="C:/Users/Administrator/Desktop/Cervical-Cancer-Detection/csvfiles/fold1/val.csv"
 FOLD=1
