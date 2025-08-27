@@ -66,3 +66,8 @@ python lazyconfig_train_net.py   --config-file mask_rcnn_vitdet_b_100ep.py   tra
 # After training
 python predictions_evaluation.py
 ```
+
+## Repository Link
+
+This project is also available on GitHub:  
+[https://github.com/mazyukv/Cervical-Cancer-Detection.git](https://github.com/mazyukv/Cervical-Cancer-Detection.git)

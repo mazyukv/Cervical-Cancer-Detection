@@ -1,7 +1,6 @@
 data/
 venv/
 .venv/
-csvfiles/
 articles/
 JPEGImages/
 __pycache__/
