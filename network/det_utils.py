@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
 import math
 from collections import OrderedDict
 from typing import Dict, List, Optional, Tuple

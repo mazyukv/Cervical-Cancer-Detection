@@ -1,12 +1,9 @@
-#!/usr/bin/env python
-# coding=utf-8
 from typing import Optional, List, Dict, Tuple
 
 import torch
 from torch import Tensor
 import torch.nn.functional as F
 
-from .focalloss import CEFocalLoss,FocalLoss
 from . import det_utils
 from . import boxes as box_ops
 

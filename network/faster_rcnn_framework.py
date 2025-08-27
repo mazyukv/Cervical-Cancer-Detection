@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
 import warnings
 from collections import OrderedDict
 from typing import Tuple, List, Dict, Optional, Union

@@ -1,3 +1,12 @@
+"""
+This file is responsible for loading our custom cervical cancer dataset 
+and specifying the training configurations for a ViTDet-based in Detectron2. 
+It registers the training and validation splits from CSV annotations, 
+converting them into Detectron2’s dataset format with a single class ("cancer"). 
+In addition, it defines the model initialization, optimizer, learning rate schedule, and dataloader settings, 
+providing the full configuration needed to run experiments on our dataset.
+
+"""
 from functools import partial
 from fvcore.common.param_scheduler import MultiStepParamScheduler
 

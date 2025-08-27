@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
-"""
-train model
-"""
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -15,8 +10,8 @@ import os
 import datetime
 import time
 
-from network.backbone_utils import resnet_fpn_backbone, densenet_fpn_backbone, swin_fpn_backbone, convnext_fpn_backbone
-from network import ssdresbackbone, SSD, FCOS, RetinaNet, FasterRCNN, CascadeRCNN
+from network.backbone_utils import resnet_fpn_backbone
+from network import FasterRCNN, CascadeRCNN
 # from vit import ViTDetector
 # from netsparse import SparseRCNN
 # from vit import YOLOv3, YOLOv7
@@ -42,7 +37,7 @@ parser.add_argument("--val_batch_size", help="val batch_size", type=int, default
 parser.add_argument("--test_batch_size", help="test batch_size", type=int, default=1)
 parser.add_argument("--num_workers", help="number of workers", type=int, default=16)
 parser.add_argument("--num_epochs", help="number of Epoch", type=int, default=50)
-parser.add_argument("--save_model_path", help="model saving dir", type=str, default="/home/stat-zx/TCTscidata/results/densenet169.pth")
+parser.add_argument("--save_model_path", help="model saving dir", type=str, default="frcnn.pth")
 # optimizer
 subparsers = parser.add_subparsers(help="optimizer type", dest="optimizer_type")
 subparsers.required = True

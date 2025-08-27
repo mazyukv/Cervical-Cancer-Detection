@@ -3,8 +3,6 @@ import numpy as np
 import torch
 from torchvision.transforms import functional as F
 import PIL
-import imgaug.augmenters as iaa
-from imgaug.augmentables.bbs import BoundingBox, BoundingBoxesOnImage
 
 
 def _flip_coco_person_keypoints(kps, width):

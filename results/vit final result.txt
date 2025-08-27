@@ -1,0 +1,10 @@
+[07/25 05:47:48 d2.utils.events]:  eta: 0:00:00  iter: 111559  total_loss: 0.03048  loss_cls: 0.007463  loss_box_reg: 0.02053  loss_rpn_cls: 8.855e-06  loss_rpn_loc: 0.001512    time: 1.1780  last_time: 1.1649  data_time: 0.5487  last_data_time: 0.5297   lr: 1e-06  max_mem: 17842M
+[07/25 05:47:48 d2.engine.hooks]: Overall training speed: 111558 iterations in 1 day, 12:30:13 (1.1780 s / it)
+[07/25 05:47:48 d2.engine.hooks]: Total training time: 1 day, 12:32:52 (0:02:39 on hooks)
+
+Number of predicted boxes: 1809
+Number of true positive boxes: 194.0
+Number of false positive boxes: 1615.0
+Test TCT AP :0.0252
+Test mAP: 0.0252
+Test F1-score: 0.1134

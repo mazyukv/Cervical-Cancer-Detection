@@ -1,12 +1,9 @@
-#!/usr/bin/env python
-# coding=utf-8
 import torch.nn as nn
 from torchvision.models import resnet
 from torchvision.models import densenet
 from torchvision import models
 from .layergetter import IntermediateLayerGetter, DenseNetLayerGetter, SwinLayerGetter, ConvNextLayerGetter
 from .fpn import FeaturePyramidNetwork, MaxpoolOnP5, LastLevelMaxPool, LastLevelP6P7
-from .misc import FrozenBatchNorm2d
 
 
 class BackboneWithFPN(nn.Module):
@@ -16,15 +13,12 @@ class BackboneWithFPN(nn.Module):
         super(BackboneWithFPN, self).__init__()
         self.body = IntermediateLayerGetter(backbone, return_layers)
 
-        # # faster,cascade,sparse使用的FPN
+        
         self.fpn = FeaturePyramidNetwork(in_channels_list,
                                          out_channel,
                                          extra_block=MaxpoolOnP5())
 
-        # fcos, retinanet使用的FPN   
-        # self.fpn = FeaturePyramidNetwork(in_channels_list,
-        #                                  out_channel,
-        #                                  extra_block=LastLevelP6P7(2048,256))     
+    
         self.out_channels = out_channel
 
     def forward(self, x):
@@ -87,30 +81,7 @@ class BackboneWithFPNForConvNext(nn.Module):
         return x
 
 
-# def resnet_fpn_backbone(backbone_name, pretrained,
-#                         norm_layer=FrozenBatchNorm2d):
 
-#     backbone = resnet.__dict__[backbone_name](
-#         pretrained=pretrained,
-#         norm_layer=norm_layer
-#     )
-#     for name, param in backbone.named_parameters():
-#         if "layer2" not in name and "layer3" not in name and "layer4" not in name:
-#             param.requires_grad_(False)
-
-#     return_layers = {"layer1": "0", "layer2": "1",
-#                      "layer3": "2", "layer4": "3"}
-
-#     in_channels_stage2 = backbone.inplanes // 8
-#     in_channels_list = [
-#         in_channels_stage2,
-#         in_channels_stage2 * 2,
-#         in_channels_stage2 * 4,
-#         in_channels_stage2 * 8,
-#     ]
-#     out_channel = 256
-#     return BackboneWithFPN(backbone, return_layers,
-#                           in_channels_list, out_channel)
 
 
 def resnet_fpn_backbone(backbone_name, pretrained):

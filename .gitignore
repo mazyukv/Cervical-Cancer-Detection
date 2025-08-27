@@ -1,5 +1,6 @@
 data/
 venv/
+.venv/
 csvfiles/
 articles/
 JPEGImages/
@@ -9,3 +10,7 @@ vitenv/
 huenv/
 vit/output/
 vit/vitenv
+vit/vetenv
+vit/vitenv2
+results/cnn
+results/vit

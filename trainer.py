@@ -3,13 +3,11 @@ import sys
 import os
 import torch
 import pandas as pd
-from sklearn.metrics import roc_auc_score, roc_curve, auc
 
 import sys
 sys.path.append(".")
 sys.path.append("..")
 import tool.utils as utils
-from tool.voc_eval import write_custom_voc_results_file, do_python_eval
 from tool.voc_eval_new import custom_voc_eval
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
@@ -67,8 +65,8 @@ def validate(epoch, model, loader, device, save_model_path, fold):
             # if no pred boxes, means that the image is negative
             locs.append("")
         else:
-            # we keep those pred boxes whose score is more than 0.5
-            new_output_index = torch.where(outputs[-1]["scores"] > 0.5)
+            # we keep those pred boxes whose score is more than 0.7
+            new_output_index = torch.where(outputs[-1]["scores"] > 0.7)
             new_boxes = outputs[-1]["boxes"][new_output_index]
             new_scores = outputs[-1]["scores"][new_output_index]
             new_labels = outputs[-1]["labels"][new_output_index]
