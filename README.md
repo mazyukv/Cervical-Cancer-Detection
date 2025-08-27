@@ -26,6 +26,15 @@ This repository contains code to reproduce the experiments from my thesis:
 └── README.md
 ```
 
+## Images
+
+The raw images used in this project (≈32 GB) are not stored in the repository due to size limits.  
+They can be downloaded from the following link:
+
+[Download Images](https://springernature.figshare.com/articles/dataset/A_large_annotated_cervical_cytology_images_dataset_for_AI_models_to_aid_cervical_cancer_screening/27901206)
+
+After downloading, place them into the `data/JPEGImages/`.
+
 ## Setup: Python environment
 
 ```bash
