@@ -69,5 +69,9 @@ python predictions_evaluation.py
 
 ## Repository Link
 
-This project is also available on GitHub:  
+This project is available on GitHub and Google Drive:  
 [https://github.com/mazyukv/Cervical-Cancer-Detection.git](https://github.com/mazyukv/Cervical-Cancer-Detection.git)
+
+[https://drive.google.com/file/d/1lbtpBSS5rQwTwNUtLFWRWGYyUJL85J71/view?usp=sharing](https://drive.google.com/file/d/1lbtpBSS5rQwTwNUtLFWRWGYyUJL85J71/view?usp=sharing)
+
+Note: The GitHub repository does **not** include the trained models in the `results` folder, while the Google Drive version does.
